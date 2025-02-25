@@ -6,13 +6,13 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 14:51:48 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 14:58:55 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 15:16:09 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_fill_grid(char **grid, t_map *map)
+void	ft_fill_grid(char **grid, t_map *map, char *path)
 {
 	int		fd;
 	char	*line;
@@ -27,7 +27,11 @@ void	ft_fill_grid(char **grid, t_map *map)
 	{
 		j = 0;
 		line = get_next_line(fd);
-		// Later I will add function to free grid if line is NULL
+		if (!line)
+		{
+			ft_free_grid(grid, map);
+			ft_terminate_and_free(NULL, map);
+		}
 		while (j < map->width)
 		{
 			grid[i][j] = line[j];
@@ -36,4 +40,5 @@ void	ft_fill_grid(char **grid, t_map *map)
 		free(line);
 		i++;
 	}
+	close(fd);
 }

@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_print_grid_debug.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:50:43 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 15:16:47 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 15:01:42 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 15:04:18 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char *av[])
+void	ft_print_grid_debug(char **grid, t_map *map)
 {
-	t_map	*map;
-	char	**grid;
+	int	i;
+	int	j;
 
-	ft_is_correct_arguments(ac);
-	ft_is_correct_path(av[1]);
-	ft_init_map(&map);
-	ft_is_correct_shape(av[1], map);
-	ft_init_grid(&grid, map);
-	ft_fill_grid(grid, map, av[1]);
-	// continue here
-	ft_print_grid_debug(grid, map);
-	ft_free_grid(grid, map);
-	free(map);
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->width)
+			write (1, &grid[i][j++], 1);
+		write (1, "\n", 1);
+		i++;
+	}
 }
