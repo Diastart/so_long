@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:42:35 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 12:57:52 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 12:59:11 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_is_correct_shape(char *path, t_map *map)
 	int		fd;
 	char	*line;
 
-	fd = open(av[1], O_RDONLY);
+	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		ft_terminate();
 	line = get_next_line(fd);
