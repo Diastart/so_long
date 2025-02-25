@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:42:35 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 13:18:23 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 13:22:56 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	ft_is_correct_shape(char *path, t_map *map)
 	}
 	if (map->height < 3 || map->width == map->height)
 		ft_terminate_and_free(line, map);
+	close(fd);
 }
