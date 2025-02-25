@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:01:29 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 11:15:35 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 11:23:15 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ft_is_correct_path(char *path)
 {
 	int	number_of_dots;
 
-	number_of_dots = ft_count_dots(char *path);
+	number_of_dots = ft_count_dots(path);
 	if (ft_strlen(path) < 5 || number_of_dots != 1 || \
-	ft_strcmp(path + (ft_strlen(path) - 4), ".ber"))
+	ft_strcmp(path + (ft_strlen(path) - 4), ".ber") != 0)
 		ft_terminate();
 }

@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:43 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 11:18:20 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 11:23:59 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char *av[])
 {
-	ft_is_correct_argumnets(ac);
+	ft_is_correct_arguments(ac);
 	ft_is_correct_path(av[1]);
 	
 }
