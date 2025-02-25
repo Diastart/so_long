@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 15:17:11 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 15:21:35 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_is_correct_arguments(int ac);
 void	ft_is_correct_path(char *path);
 void	ft_is_correct_shape(char *path, t_map *map);
 int		ft_linelen(char *line);
-void	ft_print_grid_debug(char **grid, t_map *map);
+//void	ft_print_grid_debug(char **grid, t_map *map);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_terminate_and_free(char *line, t_map *map);
 void	ft_terminate(void);
