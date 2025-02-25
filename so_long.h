@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 12:49:21 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 12:58:16 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_map
 int		ft_count_dots(char *path);
 void	ft_is_correct_arguments(int ac);
 void	ft_is_correct_path(char *path);
-void	ft_is_correct_shape(int fd, t_map *map);
+void	ft_is_correct_shape(char *path, t_map *map);
 int		ft_linelen(char *line);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_terminate(void);
