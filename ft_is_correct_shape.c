@@ -6,19 +6,11 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:42:35 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 12:59:11 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 13:18:23 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-static void	ft_terminate_and_free(char *line, t_map *map)
-{
-	if (line)
-		free(line);
-	free(map);
-	ft_terminate();
-}
 
 void	ft_is_correct_shape(char *path, t_map *map)
 {

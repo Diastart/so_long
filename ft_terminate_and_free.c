@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linelen.c                                       :+:      :+:    :+:   */
+/*   ft_terminate_and_free.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 11:51:11 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 13:05:04 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 13:18:25 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 13:18:36 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_linelen(char *line)
+void	ft_terminate_and_free(char *line, t_map *map)
 {
-	int	length;
-
-	length = 0;
-	while (*line && *line != '\n')
-	{
-		length++;
-		line++;
-	}
-	return (length);
+	if (line)
+		free(line);
+	free(map);
+	ft_terminate();
 }

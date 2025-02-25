@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_linelen.c                                       :+:      :+:    :+:   */
+/*   ft_init_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 11:51:11 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 13:05:04 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 13:13:10 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 13:13:26 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_linelen(char *line)
+void	ft_init_map(t_map **map)
 {
-	int	length;
-
-	length = 0;
-	while (*line && *line != '\n')
-	{
-		length++;
-		line++;
-	}
-	return (length);
+	*map = (t_map *)malloc(sizeof(t_map));
+	if (!*map)
+		ft_terminate();
+	(*map)->width = 0;
+	(*map)->height = 0;
 }
