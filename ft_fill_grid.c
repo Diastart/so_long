@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_fill_grid.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:50:43 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 14:57:17 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 14:51:48 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 14:58:55 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int ac, char *av[])
+void	ft_fill_grid(char **grid, t_map *map)
 {
-	t_map	*map;
-	char	**grid;
+	int		fd;
+	char	*line;
+	int		i;
+	int		j;
 
-	ft_is_correct_arguments(ac);
-	ft_is_correct_path(av[1]);
-	ft_init_map(&map);
-	ft_is_correct_shape(av[1], map);
-	ft_init_grid(&grid, map);
-	ft_fill_grid(grid, map);
-	// Later I will add function to free grid
-	free(map);
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		ft_terminate();
+	i = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		line = get_next_line(fd);
+		// Later I will add function to free grid if line is NULL
+		while (j < map->width)
+		{
+			grid[i][j] = line[j];
+			j++;
+		}
+		free(line);
+		i++;
+	}
 }
