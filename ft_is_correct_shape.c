@@ -6,25 +6,39 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:42:35 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 12:25:21 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/25 12:48:50 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_is_correct_shape(char *path)
+static void	ft_terminate_and_free(char *line, t_map *map)
 {
-	int		fd;
-	t_map	*map;
+	if (line)
+		free(line);
+	free(map);
+	ft_terminate();
+}
 
-	fd = open(path, O_RDONLY);
-	if (fd == -1)
-		ft_terminate();
-	map = (t_map *)malloc(sizeof(t_map));
-	if (!map)
-		ft_terminate();
-	map->width = 0;
-	map->height = 0;
-	ft_get_map(fd, map);
-	close(fd);
+void	ft_is_correct_shape(int fd, t_map *map)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	if (!line)
+		ft_terminate_and_free(line, map);
+	if (ft_linelen(line) < 3)
+		ft_terminate_and_free(line, map);
+	else
+		map->width = ft_linelen(line);
+	while (line)
+	{
+		if (ft_linelen(line) != map->width)
+			ft_terminate_and_free(line, map);
+		map->height++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	if (map->height < 3 || map->width == map->height)
+		ft_terminate_and_free(line, map);
 }
