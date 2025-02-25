@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_is_correct_shape.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 11:46:54 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 11:42:35 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 12:14:41 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include "get_next_line.h"
+#include "so_long.h"
 
-typedef struct s_map
+void	ft_is_correct_shape(char *path)
 {
-	int	width;
-	int	height;
-}				t_map;
+	int		fd;
+	t_map	*map;
 
-int		ft_count_dots(char *path);
-void	ft_is_correct_arguments(int ac);
-void	ft_is_correct_path(char *path);
-int		ft_strcmp(char *s1, char *s2);
-void	ft_terminate(void);
-
-#endif
+	fd = open(path, O_RDONLY);
+	map = (t_map)malloc(sizeof(t_map));
+	if (!map)
+		ft_terminate();
+	map->width = 0;
+	map->height = 0;
+	ft_get_map(fd, map);
+}

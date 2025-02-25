@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_linelen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 11:46:54 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 11:51:11 by dias              #+#    #+#             */
+/*   Updated: 2025/02/25 11:52:45 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include "get_next_line.h"
+#include "so_long.h"
 
-typedef struct s_map
+int	ft_linelen(char *line)
 {
-	int	width;
-	int	height;
-}				t_map;
-
-int		ft_count_dots(char *path);
-void	ft_is_correct_arguments(int ac);
-void	ft_is_correct_path(char *path);
-int		ft_strcmp(char *s1, char *s2);
-void	ft_terminate(void);
-
-#endif
+	int	length;
+	
+	length = 0;
+	while (*line && *line != '\n')
+	{
+		length++;
+		line++;
+	}
+	return (length);
+}
