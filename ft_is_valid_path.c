@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_correct_arguments.c                          :+:      :+:    :+:   */
+/*   ft_is_valid_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 11:16:50 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 13:04:36 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 11:01:29 by dias              #+#    #+#             */
+/*   Updated: 2025/02/26 17:59:49 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_is_correct_arguments(int ac)
+void	ft_is_valid_path(char *path)
 {
-	if (ac != 2)
-		ft_terminate();
+	int	number_of_dots;
+
+	number_of_dots = ft_count_dots(path);
+	if (ft_strlen(path) < 5 || number_of_dots != 1 || \
+	ft_strcmp(path + (ft_strlen(path) - 4), ".ber") != 0)
+		wow(NULL, NULL, NULL, 1);
 }

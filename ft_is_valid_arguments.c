@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_terminate.c                                     :+:      :+:    :+:   */
+/*   ft_is_valid_arguments.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 10:59:22 by dias              #+#    #+#             */
-/*   Updated: 2025/02/25 13:04:31 by dias             ###   ########.fr       */
+/*   Created: 2025/02/25 11:16:50 by dias              #+#    #+#             */
+/*   Updated: 2025/02/26 17:59:32 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_terminate(void)
+void	ft_is_valid_arguments(int ac)
 {
-	write (2, "Error\n", 6);
-	exit(EXIT_FAILURE);
+	if (ac != 2)
+		wow(NULL, NULL, NULL, 1);
 }

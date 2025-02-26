@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_map.c                                      :+:      :+:    :+:   */
+/*   ft_is_valid_characters.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 13:13:10 by dias              #+#    #+#             */
-/*   Updated: 2025/02/26 18:00:01 by dias             ###   ########.fr       */
+/*   Created: 2025/02/26 17:39:14 by dias              #+#    #+#             */
+/*   Updated: 2025/02/26 18:06:53 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_init_map(t_map **map)
+void	ft_is_valid_characters(char **grid, t_map *map)
 {
-	*map = (t_map *)malloc(sizeof(t_map));
-	if (!*map)
-		wow(NULL, NULL, NULL, 1);
-	(*map)->width = 0;
-	(*map)->height = 0;
+	int	i;
+	int	j;
+
+	i = 0;
+	while (++i < (map->height - 1))
+	{
+		j = 0;
+		while (++j < (map->width - 1))
+		{
+			if ((grid[i][j] != '0') || \
+			(grid[i][j] != '1') || \
+			(grid[i][j] != 'C') || \
+			(grid[i][j] != 'E') || \
+			(grid[i][j] != 'P') || \
+			(grid[i][j] != 'B'))
+				wow(map, grid, NULL, 1);
+		}
+	}
 }
