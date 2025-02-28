@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/02/28 09:32:55 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/28 10:40:11 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_init_player(t_player **player, char **grid, t_map *map);
 void	ft_is_valid_arguments(int ac);
 void	ft_is_valid_borders(char **grid, t_map *map);
 void	ft_is_valid_characters(char **grid, t_map *map);
+void	ft_is_valid_path_to_exit(t_player *pl, char **g, t_map *m, char *pth);
 void	ft_is_valid_path(char *path);
 void	ft_is_valid_quantity(char **grid, t_map *map);
 void	ft_is_valid_shape(char *path, t_map *map);
