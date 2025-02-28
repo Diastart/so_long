@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wow.c                                              :+:      :+:    :+:   */
+/*   ft_find_player_position.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 13:01:38 by dias              #+#    #+#             */
-/*   Updated: 2025/02/28 09:19:08 by dias             ###   ########.fr       */
+/*   Created: 2025/02/28 09:21:50 by dias              #+#    #+#             */
+/*   Updated: 2025/02/28 09:35:53 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	wow(t_map *m, char **g, t_player *p, int err)
+void	ft_find_player_position(t_player *player, char **grid, t_map *map)
 {
-	if (g)
-		ft_free_grid(g, m);
-	if (m)
-		free(m);
-	if (p)
-		free(p);
-	if (err)
+	int	i;
+	int	j;
+
+	i = 0;
+	while (++i < (map->height - 1))
 	{
-		write (2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
-	else
-	{
-		write (2, "Success\n", 9);
-		exit(EXIT_SUCCESS);
+		j = 0;
+		while (++j < (map->width - 1))
+		{
+			if (grid[i][j] == 'P')
+			{
+				player->i = i;
+				player->j = j;
+				return ;
+			}
+		}
 	}
 }
