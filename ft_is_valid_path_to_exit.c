@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 09:53:20 by dias              #+#    #+#             */
-/*   Updated: 2025/02/28 10:38:41 by dias             ###   ########.fr       */
+/*   Updated: 2025/02/28 10:45:11 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	ft_is_valid_path_to_exit(t_player *pl, char **g, t_map *m, char *pth)
 	ft_init_grid(&g_c, m);
 	ft_fill_grid(g_c, m, pth);
 	if (dfs(g_c, pl->i, pl->j, m))
+	{
+		ft_free_grid(g_c, m);
 		return ;
+	}
 	ft_free_grid(g_c, m);
 	wow(m, g, pl, 1);
 }
