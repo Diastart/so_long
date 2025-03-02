@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:52 by dias              #+#    #+#             */
-/*   Updated: 2025/03/02 10:05:32 by dias             ###   ########.fr       */
+/*   Updated: 2025/03/02 10:20:28 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <fcntl.h>
 # include "get_next_line.h"
 # include "minilibx_opengl/mlx.h"
-# include "ft_printf/ft_printf.h"
+# define TILE_SIZE 32
 
 typedef struct s_map
 {
@@ -59,7 +59,7 @@ typedef struct s_game
 	int			moves;
 	int			total_collectibles;
 	int			collectibles_collected;
-}		
+}				t_game;
 
 void	ft_clean_images(t_game *game);
 void	ft_close_game_success(t_game *game);
@@ -88,6 +88,7 @@ void	ft_load_images(t_game *game);
 void	ft_move_player(t_game *game, int dx, int dy);
 void	ft_put_image(t_game *game, int x, int y);
 void	ft_render_map(t_game *game);
+void	ft_printf(char *str, int value);
 int		ft_strcmp(char *s1, char *s2);
 void	wow(t_map *m, char **g, t_player *p, int err);
 
