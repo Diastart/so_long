@@ -6,7 +6,7 @@
 /*   By: dias <dias@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 10:50:43 by dias              #+#    #+#             */
-/*   Updated: 2025/02/28 10:24:15 by dias             ###   ########.fr       */
+/*   Updated: 2025/03/02 10:01:36 by dias             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ int	main(int ac, char *av[])
 	t_map		*map;
 	char		**grid;
 	t_player	*player;
+	t_mlx		*mlx;
+	t_game		game;
+	
 
 	ft_is_valid_arguments(ac);
 	ft_is_valid_path(av[1]);
@@ -29,5 +32,9 @@ int	main(int ac, char *av[])
 	ft_is_valid_characters(grid, map);
 	ft_init_player(&player, grid, map);
 	ft_is_valid_path_to_exit(player, grid, map, av[1]);
+	ft_init_game(&game, map, grid, player);
+	ft_render_map(&game);
+	mlx_key_hook(game.win, ft_handle_keypress, &game);
+	mlx_loop(game.mlx);
 	wow(map, grid, NULL, 0);
 }
