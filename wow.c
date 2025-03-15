@@ -26,8 +26,5 @@ void	wow(t_map *m, char **g, t_player *p, int err)
 		exit(EXIT_FAILURE);
 	}
 	else
-	{
-		write (2, "Success\n", 9);
 		exit(EXIT_SUCCESS);
-	}
 }

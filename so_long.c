@@ -18,7 +18,6 @@ int	main(int ac, char *av[])
 	char		**grid;
 	t_player	*player;
 	t_game		game;
-	
 
 	ft_is_valid_arguments(ac);
 	ft_is_valid_path(av[1]);

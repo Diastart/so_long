@@ -16,10 +16,9 @@ void	ft_put_image(t_game *game, int x, int y)
 {
 	void	*img;
 
-	img = game->img.floor;
-	mlx_put_image_to_window(game->mlx, game->win, img, x * TILE_SIZE, y * TILE_SIZE);
-	
-	if (game->grid[y][x] == '1')
+	if (game->grid[y][x] == '0')
+		img = game->img.floor;
+	else if (game->grid[y][x] == '1')
 		img = game->img.wall;
 	else if (game->grid[y][x] == 'C')
 		img = game->img.collectible;
@@ -28,6 +27,7 @@ void	ft_put_image(t_game *game, int x, int y)
 	else if (game->grid[y][x] == 'P')
 		img = game->img.player;
 	else
-		return;
-	mlx_put_image_to_window(game->mlx, game->win, img, x * TILE_SIZE, y * TILE_SIZE);
+		return ;
+	mlx_put_image_to_window(game->mlx, game->win, \
+	img, x * TILE_SIZE, y * TILE_SIZE);
 }

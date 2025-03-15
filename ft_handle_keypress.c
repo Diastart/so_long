@@ -36,4 +36,3 @@ int	ft_handle_keypress(int keycode, t_game *game)
 		ft_move_player(game, 1, 0);
 	return (0);
 }
-

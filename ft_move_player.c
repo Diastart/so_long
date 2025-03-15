@@ -20,7 +20,7 @@ void	ft_move_player(t_game *game, int dx, int dy)
 	new_j = game->player->j + dx;
 	new_i = game->player->i + dy;
 	if (game->grid[new_i][new_j] == '1')
-		return;
+		return ;
 	if (game->grid[new_i][new_j] == 'E')
 	{
 		if (game->collectibles_collected == game->total_collectibles)
@@ -28,13 +28,10 @@ void	ft_move_player(t_game *game, int dx, int dy)
 			ft_printf("Moves: %d\n", ++game->moves);
 			ft_close_game_success(game);
 		}
-		return;
+		return ;
 	}
 	if (game->grid[new_i][new_j] == 'C')
-	{
 		game->collectibles_collected++;
-		game->grid[new_i][new_j] = '0';
-	}
 	game->grid[game->player->i][game->player->j] = '0';
 	game->grid[new_i][new_j] = 'P';
 	game->player->i = new_i;

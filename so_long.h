@@ -17,8 +17,9 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include "get_next_line.h"
+# include "ft_printf/ft_printf.h"
 # include "minilibx-linux/mlx.h"
-# define TILE_SIZE 32
+# define TILE_SIZE 64
 
 typedef struct s_map
 {
@@ -88,7 +89,6 @@ void	ft_load_images(t_game *game);
 void	ft_move_player(t_game *game, int dx, int dy);
 void	ft_put_image(t_game *game, int x, int y);
 void	ft_render_map(t_game *game);
-void	ft_printf(char *str, int value);
 int		ft_strcmp(char *s1, char *s2);
 void	wow(t_map *m, char **g, t_player *p, int err);
 
